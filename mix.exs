@@ -25,6 +25,7 @@ defmodule BanditNative.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:bandit, ">= 0.0.0"},
       {:rustler, ">= 0.0.0", runtime: false}
     ]
   end

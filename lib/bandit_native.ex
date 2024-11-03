@@ -3,8 +3,8 @@ defmodule BanditNative do
 
   use Rustler, otp_app: :bandit_native, crate: "bandit_native"
 
-  @behaviour BanditNative.Behaviour
+  @behaviour Bandit.PrimitiveOps
 
-  @impl true
+  @impl Bandit.PrimitiveOps
   def ws_mask(_data, _mask), do: :erlang.nif_error(:nif_not_loaded)
 end
