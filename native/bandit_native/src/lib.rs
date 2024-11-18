@@ -30,4 +30,4 @@ fn ws_mask<'a>(env: Env<'a>, data: Binary<'a>, mask_value: u32) -> NifResult<Bin
     Ok(out.into())
 }
 
-rustler::init!("Elixir.BanditNative");
+rustler::init!("Elixir.BanditNative.WebSocket");

@@ -4,9 +4,8 @@ defmodule BanditNative.MixProject do
   def project do
     [
       app: :bandit_native,
-      version: "0.1.0",
-      elixir: "~> 1.17",
-      start_permanent: Mix.env() == :prod,
+      version: "0.0.1",
+      elixir: "~> 1.13",
       elixirc_paths: elixirc_paths(Mix.env()),
       deps: deps()
     ]
@@ -25,7 +24,7 @@ defmodule BanditNative.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:bandit, ">= 0.0.0"},
+      {:bandit, ">= 1.6.0"},
       {:rustler, ">= 0.0.0", runtime: false}
     ]
   end

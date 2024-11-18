@@ -12,3 +12,27 @@ def deps do
   ]
 end
 ```
+
+Then configure your bandit server to use `BanditNative` like this.
+
+```elixir
+children = [
+  {Bandit,
+    plug: MyRouter,
+    scheme: :http,
+    port: 4004,
+    websocket_options: [primitive_ops_module: BanditNative.WebSocket]},
+  ...
+]
+```
+
+Or in case of a [phoenix endpoint](https://hexdocs.pm/bandit/Bandit.PhoenixAdapter.html#module-endpoint-configuration) you can add it to config file like this:
+
+```elixir
+config :your_app, YourAppWeb.Endpoint,
+  http: [
+    ip: {127, 0, 0, 1},
+    port: 4000,
+    websocket_options: [primitive_ops_module: BanditNative.WebSocket]
+  ],
+```
